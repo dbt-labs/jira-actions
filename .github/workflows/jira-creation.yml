@@ -50,7 +50,7 @@ jobs:
         with:
           project: CT
           issuetype: "GitHub Issue"
-          summary: "${{ github.event.issue.title }}""
+          summary: "${{ github.event.issue.title }}"
           fields: '{ "customfield_10049": "${{ github.repository }}", "customfield_10048": "${{ github.event.issue.html_url }}", "customfield_10047": ${{ github.event.issue.number }} }'
  
       - name: Update Issue Title
