@@ -68,7 +68,7 @@ jobs:
           ID='${{ steps.create.outputs.issue }}'
           echo ::set-output name=issueId::${ID}
 
-    find-labels:
+  find-labels:
     runs-on: ubuntu-latest
     needs:
       - create-issue
