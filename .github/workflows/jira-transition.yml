@@ -46,7 +46,6 @@ jobs:
           JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
 
       - name: Transition issue in Jira to Done
-        needs: jira-login
         if: github.event.action == 'closed' || github.event.action == 'deleted'
         uses: atlassian/gajira-transition@master
         with:
@@ -54,7 +53,6 @@ jobs:
           transition: "Done"
 
       - name: Transition issue in Jira to To Do
-        needs: jira-login
         if: github.event.action == 'reopened'
         uses: atlassian/gajira-transition@master
         with:
